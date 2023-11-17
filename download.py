@@ -15,6 +15,11 @@ def get_csv(crypto, timestamp):
     url = url_base + par + '/' + par +'-trades-' + fecha + '.zip'    
     local_file = './zips/' + channel_folder + par + fecha + '.zip'
     print(url)
+
+    if os.path.exists(local_file):
+        print(f"Ya existe un archivo para {par} en la fecha {fecha}. No es necesario descargarlo nuevamente.")
+        return
+    
     #descarga el archivo
     wget.download(url, local_file)
     cwd = os.getcwd()

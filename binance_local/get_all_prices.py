@@ -1,6 +1,6 @@
 import requests
 import json
-
+import globales
 #import concurrent.futures
 from binance_local import consultas
 import lista_de_cryptos
